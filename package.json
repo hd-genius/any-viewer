@@ -1,0 +1,22 @@
+{
+  "name": "any-viewer",
+  "version": "1.0.0",
+  "description": "3d model viewer",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hd-genius/any-viewer.git"
+  },
+  "author": "Roy Stewart",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/hd-genius/any-viewer/issues"
+  },
+  "homepage": "https://github.com/hd-genius/any-viewer#readme"
+}
