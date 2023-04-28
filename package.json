@@ -1,8 +1,8 @@
 {
   "name": "any-viewer",
+  "private": true,
   "version": "1.0.0",
   "description": "3d model viewer",
-  "main": "index.html",
   "directories": {
     "doc": "docs"
   },
