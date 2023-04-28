@@ -2,8 +2,11 @@
 <html>
 
 <head>
-    <script src="./main.js"></script>
-    <link href="./styles.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <base href=".">
+    <title>Any Viewer</title>
+    <script type="module" src="./scripts/main.js"></script>
+    <link href="./styles/styles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -14,7 +17,7 @@
         <div id="control-bar">
             <input type="file" id="model-selector" accept=".stl" />
         </div>
-        <div id="model-view-port"></div>
+        <canvas id="model-view-port"></canvas>
     </main>
 </body>
 
