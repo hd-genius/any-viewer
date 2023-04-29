@@ -1,11 +1,13 @@
 const { series, parallel, src, dest } = require('gulp')
+const gulpClean = require('gulp-clean');
 const webpack = require('webpack-stream')
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create();
 
-const clean = (cb) => {
-    cb()
+const clean = () => {
+    return src("build/", { allowEmpty: true })
+        .pipe(gulpClean())
 }
 
 const buildStyles = () => {
@@ -44,4 +46,4 @@ exports.serve = () => {
     });
 }
 
-exports.default = series(clean, build)
+exports.default = series(gulpClean, build)
