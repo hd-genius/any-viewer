@@ -1,38 +1,40 @@
-const { series, parallel, src, dest } = require('gulp');
-const webpack = require('webpack-stream');
-const minifyHTML = require('gulp-htmlmin');
-const cleanCSS = require('gulp-clean-css');
+const { series, parallel, src, dest } = require('gulp')
+const webpack = require('webpack-stream')
+const minifyHTML = require('gulp-htmlmin')
+const cleanCSS = require('gulp-clean-css')
 
 const clean = (cb) => {
-    cb();
+    cb()
 }
 
 const buildStyles = () => {
-    return src("src/styles/styles.css")
+    return src('src/styles/styles.css')
         .pipe(cleanCSS())
-        .pipe(dest("build/styles"));
+        .pipe(dest('build/styles'))
 }
 
 const buildScripts = () => {
-    return src("src/scripts/main.js")
-        .pipe(webpack({
-            mode: "production"
-        }))
-        .pipe(dest("build/scripts"));
+    return src('src/scripts/main.js')
+        .pipe(
+            webpack({
+                mode: 'production',
+            })
+        )
+        .pipe(dest('build/scripts'))
 }
 
 const buildHtml = () => {
-    return src("src/index.html")
+    return src('src/index.html')
         .pipe(minifyHTML({ collapseWhitespace: true }))
-        .pipe(dest("build/"));
+        .pipe(dest('build/'))
 }
 
-const build = parallel(buildStyles, buildScripts, buildHtml);
+const build = parallel(buildStyles, buildScripts, buildHtml)
 
-exports.clean = clean;
+exports.clean = clean
 
-exports.build = build;
+exports.build = build
 
-exports.serve = () => {};
+exports.serve = () => {}
 
-exports.default = series(clean, build);
+exports.default = series(clean, build)

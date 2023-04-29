@@ -1,33 +1,33 @@
-import { ApplicationError, CompatibilityError } from "./errors";
+import { ApplicationError, CompatibilityError } from './errors'
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
     try {
-        const modelSelector = document.getElementById("model-selector");
-        modelSelector.addEventListener("change", handleFileChange, false);
-        setupWebGL();
+        const modelSelector = document.getElementById('model-selector')
+        modelSelector.addEventListener('change', handleFileChange, false)
+        setupWebGL()
     } catch (error) {
         if (error instanceof ApplicationError) {
-            error.handle();
+            error.handle()
         } else {
-            throw error;
+            throw error
         }
-    } 
-});
+    }
+})
 
 function setupWebGL() {
-    const modelViewPort = document.getElementById("model-view-port");
-    const webGL = modelViewPort.getContext("webgl");
+    const modelViewPort = document.getElementById('model-view-port')
+    const webGL = modelViewPort.getContext('webgl')
 
     if (!webGL) {
-        throw new CompatibilityError("must support WebGL");
+        throw new CompatibilityError('must support WebGL')
     }
 
-    webGL.clearColor(0.0, 0.0, 0.0, 1.0);
-    webGL.clear(webGL.COLOR_BUFFER_BIT);
+    webGL.clearColor(0.0, 0.0, 0.0, 1.0)
+    webGL.clear(webGL.COLOR_BUFFER_BIT)
 }
 
 function handleFileChange() {
-    const fileList = this.files;
-    const modelFile = fileList[0];
-    console.log(`${modelFile.name} has been selected`);
+    const fileList = this.files
+    const modelFile = fileList[0]
+    console.log(`${modelFile.name} has been selected`)
 }

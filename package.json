@@ -1,35 +1,35 @@
 {
-  "name": "any-viewer",
-  "private": true,
-  "version": "1.0.0",
-  "description": "3d model viewer",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "gulp",
-    "format": "prettier . --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hd-genius/any-viewer.git"
-  },
-  "author": "Roy Stewart",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/hd-genius/any-viewer/issues"
-  },
-  "homepage": "https://github.com/hd-genius/any-viewer#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-cli": "^2.3.0",
-    "gulp-htmlmin": "^5.0.1",
-    "hdgenius-prettier-config": "^1.0.0",
-    "prettier": "^2.8.8",
-    "webpack": "^5.81.0",
-    "webpack-stream": "^7.0.0"
-  },
-  "prettier": "hdgenius-prettier-config"
+    "name": "any-viewer",
+    "private": true,
+    "version": "1.0.0",
+    "description": "3d model viewer",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "gulp",
+        "format": "prettier . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hd-genius/any-viewer.git"
+    },
+    "author": "Roy Stewart",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/hd-genius/any-viewer/issues"
+    },
+    "homepage": "https://github.com/hd-genius/any-viewer#readme",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-cli": "^2.3.0",
+        "gulp-htmlmin": "^5.0.1",
+        "hdgenius-prettier-config": "^1.0.0",
+        "prettier": "^2.8.8",
+        "webpack": "^5.81.0",
+        "webpack-stream": "^7.0.0"
+    },
+    "prettier": "hdgenius-prettier-config"
 }
