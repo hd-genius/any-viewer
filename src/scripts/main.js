@@ -20,7 +20,7 @@ function setupWebGL() {
     const modelViewPort = document.getElementById("model-view-port");
     const webGL = modelViewPort.getContext("webgl");
 
-    if (webGL) {
+    if (!webGL) {
         throw new CompatibilityError("must support WebGL");
     }
 

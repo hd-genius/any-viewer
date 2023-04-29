@@ -2,6 +2,7 @@ import { ApplicationError } from "./application-error";
 
 export class CompatibilityError extends ApplicationError {
     constructor(unsatisfiedRequirement) {
+        super();
         this.unsatisfiedRequirement = unsatisfiedRequirement;
     }
 
