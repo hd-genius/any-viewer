@@ -9,7 +9,8 @@
     "scripts": {
         "test": "jest",
         "build": "gulp",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "serve": "gulp serve"
     },
     "repository": {
         "type": "git",
@@ -22,6 +23,7 @@
     },
     "homepage": "https://github.com/hd-genius/any-viewer#readme",
     "devDependencies": {
+        "browser-sync": "^2.29.1",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.3.0",
         "gulp-cli": "^2.3.0",

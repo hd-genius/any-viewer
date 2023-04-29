@@ -2,6 +2,7 @@ const { series, parallel, src, dest } = require('gulp')
 const webpack = require('webpack-stream')
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
+const browserSync = require('browser-sync').create();
 
 const clean = (cb) => {
     cb()
@@ -35,6 +36,12 @@ exports.clean = clean
 
 exports.build = build
 
-exports.serve = () => {}
+exports.serve = () => {
+    browserSync.init({
+        server: {
+            baseDir: "./build/"
+        }
+    });
+}
 
 exports.default = series(clean, build)
