@@ -1,6 +1,6 @@
-const { series, parallel } = require('gulp');
+const { series, parallel, src, dest } = require('gulp');
 
-exports.clean = (cb) => {
+const clean = (cb) => {
     cb();
 }
 
@@ -28,10 +28,14 @@ const minifyScripts = (cb) => {
 
 const buildScripts = series(compileScripts, bundleScripts, minifyScripts);
 
-const copyHtml = (cb) => {
-    cb();
+const copyHtml = () => {
+    return src("src/*.html").pipe(dest("build/"));
 }
 
-exports.build = parallel(buildStyles, buildScripts, copyHtml);
+const build = parallel(buildStyles, buildScripts, copyHtml);
+
+exports.clean = clean;
+
+exports.build = build;
 
 exports.default = series(clean, build);
