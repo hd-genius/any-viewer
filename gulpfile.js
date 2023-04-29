@@ -1,13 +1,12 @@
-const { series, parallel, src, dest } = require('gulp')
-const gulpClean = require('gulp-clean');
+const { series, parallel, src, dest, watch } = require('gulp')
+const gulpClean = require('gulp-clean')
 const webpack = require('webpack-stream')
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create()
 
 const clean = () => {
-    return src("build/", { allowEmpty: true })
-        .pipe(gulpClean())
+    return src('build/', { allowEmpty: true }).pipe(gulpClean())
 }
 
 const buildStyles = () => {
@@ -41,9 +40,16 @@ exports.build = build
 exports.serve = () => {
     browserSync.init({
         server: {
-            baseDir: "./build/"
-        }
-    });
+            baseDir: './build/',
+        },
+        watch: true,
+    })
+
+    watch('src/**/*.css', { ignoreInitial: false }, buildStyles)
+
+    watch('src/**/*.js', { ignoreInitial: false }, buildScripts)
+
+    watch('src/**/*.html', { ignoreInitial: false }, buildHtml)
 }
 
 exports.default = series(gulpClean, build)
