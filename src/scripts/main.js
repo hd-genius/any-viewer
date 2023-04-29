@@ -11,9 +11,7 @@ window.addEventListener("load", () => {
         } else {
             throw error;
         }
-    } finally {
-        //
-    }
+    } 
 });
 
 function setupWebGL() {
