@@ -52,4 +52,4 @@ exports.serve = () => {
     watch('src/**/*.html', { ignoreInitial: false }, buildHtml)
 }
 
-exports.default = series(gulpClean, build)
+exports.default = series(clean, build)
