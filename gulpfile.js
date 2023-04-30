@@ -1,6 +1,7 @@
 const { series, parallel, src, dest, watch } = require('gulp')
 const gulpClean = require('gulp-clean')
 const webpack = require('webpack-stream')
+const webpackConfig = require("./webpack.config")
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create()
@@ -20,6 +21,7 @@ const buildScripts = () => {
         .pipe(
             webpack({
                 mode: 'production',
+                ...webpackConfig
             })
         )
         .pipe(dest('build/scripts'))
