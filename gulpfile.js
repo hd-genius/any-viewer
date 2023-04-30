@@ -1,10 +1,16 @@
 const { series, parallel, src, dest, watch } = require('gulp')
 const gulpClean = require('gulp-clean')
 const webpack = require('webpack-stream')
-const webpackConfig = require("./webpack.config")
+const webpackConfig = require('./webpack.config')
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create()
+
+const bundeJavascript = () =>
+    webpack({
+        mode: 'production',
+        ...webpackConfig,
+    })
 
 const clean = () => {
     return src('build/', { allowEmpty: true }).pipe(gulpClean())
@@ -17,23 +23,14 @@ const buildStyles = () => {
 }
 
 const buildComponents = () => {
-    return src("src/components/index.js")
-        .pipe(webpack({
-            mode: 'production',
-            ...webpackConfig
-        })
-        )
+    return src('src/components/index.js')
+        .pipe(bundeJavascript())
         .pipe(dest('build/components'))
 }
 
 const buildScripts = () => {
     return src('src/scripts/main.js')
-        .pipe(
-            webpack({
-                mode: 'production',
-                ...webpackConfig
-            })
-        )
+        .pipe(bundeJavascript())
         .pipe(dest('build/scripts'))
 }
 
@@ -58,11 +55,11 @@ exports.serve = () => {
     })
 
     watch('src/styles/**/*.css', { ignoreInitial: false }, buildStyles)
-    
+
     watch('src/scripts/**/*.js', { ignoreInitial: false }, buildScripts)
-    
-    watch("src/components/**/*", { ignoreInitial: false }, buildComponents)    
-    
+
+    watch('src/components/**/*', { ignoreInitial: false }, buildComponents)
+
     watch('src/**/*.html', { ignoreInitial: false }, buildHtml)
 }
 
