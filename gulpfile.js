@@ -16,6 +16,16 @@ const buildStyles = () => {
         .pipe(dest('build/styles'))
 }
 
+const buildComponents = () => {
+    return src("src/components/index.js")
+        .pipe(webpack({
+            mode: 'production',
+            ...webpackConfig
+        })
+        )
+        .pipe(dest('build/components'))
+}
+
 const buildScripts = () => {
     return src('src/scripts/main.js')
         .pipe(
@@ -33,7 +43,7 @@ const buildHtml = () => {
         .pipe(dest('build/'))
 }
 
-const build = parallel(buildStyles, buildScripts, buildHtml)
+const build = parallel(buildStyles, buildScripts, buildComponents, buildHtml)
 
 exports.clean = clean
 
@@ -47,10 +57,12 @@ exports.serve = () => {
         watch: true,
     })
 
-    watch('src/**/*.css', { ignoreInitial: false }, buildStyles)
-
-    watch('src/**/*.js', { ignoreInitial: false }, buildScripts)
-
+    watch('src/styles/**/*.css', { ignoreInitial: false }, buildStyles)
+    
+    watch('src/scripts/**/*.js', { ignoreInitial: false }, buildScripts)
+    
+    watch("src/components/**/*", { ignoreInitial: false }, buildComponents)    
+    
     watch('src/**/*.html', { ignoreInitial: false }, buildHtml)
 }
 
