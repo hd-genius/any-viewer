@@ -6,8 +6,17 @@ module.exports = {
                 use: 'raw-loader',
             },
             {
-                test: /\.module.css$/i,
-                use: 'css-loader',
+                test: /\.module\.css$/i,
+                use: [
+                    { loader: "style-loader" },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    }
+                ]
+
             },
         ],
     },
