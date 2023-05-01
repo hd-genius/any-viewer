@@ -6,7 +6,7 @@ const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create()
 
-const bundeJavascript = () =>
+const bundleJavascript = () =>
     webpack({
         mode: 'production',
         ...webpackConfig,
@@ -24,13 +24,13 @@ const buildStyles = () => {
 
 const buildComponents = () => {
     return src('src/components/index.js')
-        .pipe(bundeJavascript())
+        .pipe(bundleJavascript())
         .pipe(dest('build/components'))
 }
 
 const buildScripts = () => {
     return src('src/scripts/main.js')
-        .pipe(bundeJavascript())
+        .pipe(bundleJavascript())
         .pipe(dest('build/scripts'))
 }
 
