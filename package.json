@@ -25,6 +25,7 @@
     "homepage": "https://github.com/hd-genius/any-viewer#readme",
     "devDependencies": {
         "browser-sync": "^2.29.1",
+        "css-loader": "^6.7.3",
         "gulp": "^4.0.2",
         "gulp-clean": "^0.4.0",
         "gulp-clean-css": "^4.3.0",
