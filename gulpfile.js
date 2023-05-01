@@ -5,6 +5,7 @@ const webpackConfig = require('./webpack.config')
 const minifyHTML = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create()
+const rename = require('gulp-rename')
 
 const bundleJavascript = () =>
     webpack({
@@ -25,6 +26,7 @@ const buildStyles = () => {
 const buildComponents = () => {
     return src('src/components/index.js')
         .pipe(bundleJavascript())
+        .pipe(rename('index.js'))
         .pipe(dest('build/components'))
 }
 
