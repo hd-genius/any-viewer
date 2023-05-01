@@ -16,8 +16,11 @@ module.exports = {
                         }
                     }
                 ]
-
             },
+            {
+                test: /\.svg$/i,
+                use: 'file-loader',
+            }
         ],
     },
 }
