@@ -1,6 +1,4 @@
-import { ApplicationError, CompatibilityError } from './errors'
-import vertexShader from '../shaders/vertex/default.glsl'
-import fragmentShader from '../shaders/fragment/default.glsl'
+import { ApplicationError } from './errors'
 
 window.addEventListener('error', (error) => {
     if (error instanceof ApplicationError) {

@@ -1,5 +1,8 @@
+import { CompatibilityError } from '../../scripts/errors'
 import { registerComponent } from '../utils'
 import styles from './render-viewport.module.css'
+import vertexShaderSource from '../shaders/vertex/default.glsl'
+import fragmentShaderSource from '../shaders/fragment/default.glsl'
 
 export class RenderViewport extends HTMLCanvasElement {
     constructor() {
@@ -27,10 +30,10 @@ export class RenderViewport extends HTMLCanvasElement {
         this.webGL.clearColor(0.0, 0.0, 0.0, 1.0)
         this.webGL.clear(this.webGL.COLOR_BUFFER_BIT)
 
-        const vertexShader = loadShader(this.webGL.VERTEX_SHADER, vertexShader)
+        const vertexShader = loadShader(this.webGL.VERTEX_SHADER, vertexShaderSource)
         const fragmentShader = loadShader(
             this.webGL.FRAGMENT_SHADER,
-            fragmentShader
+            fragmentShaderSource
         )
 
         // Create the shader program
