@@ -1,4 +1,4 @@
-import { CompatibilityError } from '../../scripts/errors'
+import { CompatibilityError } from '../../errors'
 import { registerComponent } from '../utils'
 import styles from './render-viewport.module.css'
 import vertexShaderSource from '../shaders/vertex/default.glsl'

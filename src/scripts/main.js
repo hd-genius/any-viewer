@@ -1,4 +1,4 @@
-import { ApplicationError } from './errors'
+import { ApplicationError } from '../errors'
 
 window.addEventListener('error', (error) => {
     if (error instanceof ApplicationError) {
