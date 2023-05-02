@@ -19,8 +19,8 @@ module.exports = {
             },
             {
                 test: /\.svg$/i,
-                use: 'file-loader',
-            }
+                use: "url-loader"
+            },
         ],
     },
 }
