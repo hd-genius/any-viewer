@@ -17,9 +17,3 @@ main {
     justify-content: center;
     align-items: center;
 }
-
-#model-view-port {
-    flex: 1;
-    background-color: magenta;
-    width: 100%;
-}
