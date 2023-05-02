@@ -1,4 +1,12 @@
 .actionButton {
     background-color: purple;
     border-radius: 50%;
+    font-size: 2rem;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon {
+    height: 1em;
+    width: 1em;
 }
