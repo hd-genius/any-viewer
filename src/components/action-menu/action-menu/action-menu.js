@@ -1,4 +1,4 @@
-const { registerComponent } = require('../utils')
+import { registerComponent } from '../../utils'
 import styles from './action-menu.module.css'
 
 export class ActionMenu extends HTMLElement {

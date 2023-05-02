@@ -1,4 +1,4 @@
-import { registerComponent } from '../utils'
+import { registerComponent } from '../../utils'
 import buttonIcon from './button-icon.svg'
 import styles from './action-button.module.css'
 
