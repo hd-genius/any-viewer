@@ -1,4 +1,9 @@
-action-menu {
+.actionMenu {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    align-items: end;
+    margin: 1rem;
 }

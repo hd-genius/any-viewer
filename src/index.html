@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <base href="." />
-        <title>Any Viewer</title>
-        <script src="./scripts/main.js"></script>
-        <script src="./components/index.js"></script>
-        <link href="./styles/styles.css" rel="stylesheet" />
-    </head>
 
-    <body>
-        <header>
-            <h1>Any Viewer</h1>
-        </header>
-        <main>
-            <div id="control-bar">
-                <input type="file" id="model-selector" accept=".stl" />
-            </div>
-            <canvas id="model-view-port"></canvas>
-            <action-menu>
-                <action-menu-button></action-menu-button>
-                <action-menu-item id="open-model-button"
-                    >Open model</action-menu-item
-                >
-            </action-menu>
-        </main>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <base href="." />
+    <title>Any Viewer</title>
+    <script src="./scripts/main.js"></script>
+    <script src="./components/index.js"></script>
+    <link href="./styles/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>Any Viewer</h1>
+    </header>
+    <main>
+        <div id="control-bar">
+            <input type="file" id="model-selector" accept=".stl" />
+        </div>
+        <canvas id="model-view-port"></canvas>
+        <action-menu>
+            <action-menu-item id="open-model-button">Open model</action-menu-item>
+            <button is="action-menu-button"></button>
+        </action-menu>
+    </main>
+</body>
+
 </html>
