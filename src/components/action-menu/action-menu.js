@@ -1,7 +1,7 @@
 const { registerComponent } = require("../utils");
 import styles from "./action-menu.module.css"
 
-class ActionMenu extends HTMLElement {
+export class ActionMenu extends HTMLElement {
     constructor() {
         super()
     }
