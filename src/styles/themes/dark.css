@@ -1,3 +1,6 @@
 :root {
-    /* */
+    --text-color: white;
+    --background-color: black;
+    --primary-color: magenta;
+    --primary-text-color: black;
 }

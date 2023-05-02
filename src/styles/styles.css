@@ -1,3 +1,6 @@
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
 body {
     margin: 0;
     padding: 0;
