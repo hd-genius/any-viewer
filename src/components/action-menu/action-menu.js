@@ -7,8 +7,6 @@ class ActionMenu extends HTMLElement {
     }
     
     connectedCallback() {
-        console.log('here')
-    
         this.classList.add(styles.actionMenu)
     }
 }
