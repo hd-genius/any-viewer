@@ -1,5 +1,5 @@
 .actionButton {
-    background-color: purple;
+    background-color: var(--primary-color);
     border-radius: 50%;
     font-size: 2rem;
     width: 1.5em;
