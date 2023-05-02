@@ -7,12 +7,6 @@ body {
     height: 100%;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 main {
     flex: 1;
     display: flex;
