@@ -13,4 +13,14 @@
 .icon {
     height: 1em;
     width: 1em;
+    transition-property: rotate;
+    transition-duration: 0.5s;
+}
+
+.close .icon {
+    rotate: 0deg;
+}
+
+.open .icon {
+    rotate: 135deg;
 }
