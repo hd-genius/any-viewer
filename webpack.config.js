@@ -8,18 +8,18 @@ module.exports = {
             {
                 test: /\.module\.css$/i,
                 use: [
-                    { loader: "style-loader" },
+                    { loader: 'style-loader' },
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true
-                        }
-                    }
-                ]
+                            modules: true,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.svg$/i,
-                use: "url-loader"
+                use: 'url-loader',
             },
         ],
     },

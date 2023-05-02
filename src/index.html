@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <base href="." />
+        <title>Any Viewer</title>
+        <script src="./scripts/main.js"></script>
+        <script src="./components/index.js"></script>
+        <link href="./styles/styles.css" rel="stylesheet" />
+    </head>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8" />
-    <base href="." />
-    <title>Any Viewer</title>
-    <script src="./scripts/main.js"></script>
-    <script src="./components/index.js"></script>
-    <link href="./styles/styles.css" rel="stylesheet" />
-</head>
-
-<body>
-    <main>
-        <canvas id="model-view-port" is="render-viewport"></canvas>
-        <action-menu>
-            <action-menu-item id="open-model-button">Open model</action-menu-item>
-            <button is="action-menu-button"></button>
-        </action-menu>
-    </main>
-</body>
-
+    <body>
+        <main>
+            <canvas id="model-view-port" is="render-viewport"></canvas>
+            <action-menu>
+                <action-menu-item id="open-model-button"
+                    >Open model</action-menu-item
+                >
+                <button is="action-menu-button"></button>
+            </action-menu>
+        </main>
+    </body>
 </html>

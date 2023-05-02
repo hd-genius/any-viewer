@@ -9,14 +9,14 @@ export class ActionButton extends HTMLButtonElement {
 
         this.classList.add(styles.actionButton)
 
-        const icon = document.createElement("img")
-        icon.src = buttonIcon;
+        const icon = document.createElement('img')
+        icon.src = buttonIcon
         icon.classList.add(styles.icon)
         this.appendChild(icon)
 
         this.close()
 
-        this.addEventListener("click", this.onclick)
+        this.addEventListener('click', this.onclick)
     }
 
     get isOpen() {
@@ -42,4 +42,4 @@ export class ActionButton extends HTMLButtonElement {
     }
 }
 
-registerComponent(ActionButton, 'action-menu-button', {extends: "button"})
+registerComponent(ActionButton, 'action-menu-button', { extends: 'button' })
