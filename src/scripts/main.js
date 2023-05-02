@@ -6,14 +6,12 @@ let webGL
 
 window.addEventListener('load', () => {
     try {
-        const modelSelector = document.getElementById('model-selector')
-        modelSelector.addEventListener('change', handleFileChange, false)
         setupWebGL()
     } catch (error) {
         if (error instanceof ApplicationError) {
             error.handle()
         } else {
-            throw error
+            throw new ApplicationError()
         }
     }
 })
@@ -80,10 +78,4 @@ function loadShader(type, source) {
     }
 
     return shader
-}
-
-function handleFileChange() {
-    const fileList = this.files
-    const modelFile = fileList[0]
-    console.log(`${modelFile.name} has been selected`)
 }
