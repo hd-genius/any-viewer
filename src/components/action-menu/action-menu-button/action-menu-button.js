@@ -1,6 +1,6 @@
 import { registerComponent } from '../../utils'
 import buttonIcon from './button-icon.svg'
-import styles from './action-button.module.css'
+import styles from './action-menu-button.module.css'
 
 // spin x into a + on close
 export class ActionButton extends HTMLButtonElement {
