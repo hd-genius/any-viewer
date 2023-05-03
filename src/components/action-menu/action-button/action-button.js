@@ -6,7 +6,9 @@ import styles from './action-button.module.css'
 export class ActionButton extends HTMLButtonElement {
     constructor() {
         super()
+    }
 
+    connectedCallback() {
         this.classList.add(styles.actionButton)
 
         const icon = document.createElement('img')
@@ -14,31 +16,19 @@ export class ActionButton extends HTMLButtonElement {
         icon.classList.add(styles.icon)
         this.appendChild(icon)
 
-        this.close()
-
         this.addEventListener('click', this.onclick)
     }
 
-    get isOpen() {
-        return this.classList.contains(styles.open)
+    get owningMenu() {
+        return this.closest("action-menu")
     }
 
     onclick() {
-        if (this.isOpen) {
-            this.close()
+        if (this.owningMenu.isOpen) {
+            this.owningMenu.close()
         } else {
-            this.open()
+            this.owningMenu.open()
         }
-    }
-
-    open() {
-        this.classList.add(styles.open)
-        this.classList.remove(styles.close)
-    }
-
-    close() {
-        this.classList.add(styles.close)
-        this.classList.remove(styles.open)
     }
 }
 
