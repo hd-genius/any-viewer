@@ -26,12 +26,10 @@ export class ActionMenu extends HTMLElement {
 
     open() {
         this.setAttribute("open", true)
-        this.dispatchEvent(new Event("open"))
     }
 
     close() {
         this.removeAttribute("open")
-        this.dispatchEvent(new Event("close"))
     }
 }
 
