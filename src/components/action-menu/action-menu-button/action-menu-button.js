@@ -3,7 +3,7 @@ import buttonIcon from './button-icon.svg'
 import styles from './action-menu-button.module.css'
 
 // spin x into a + on close
-export class ActionButton extends HTMLButtonElement {
+export class ActionMenuButton extends HTMLButtonElement {
     constructor() {
         super()
     }
@@ -32,4 +32,4 @@ export class ActionButton extends HTMLButtonElement {
     }
 }
 
-registerComponent(ActionButton, 'action-menu-button', { extends: 'button' })
+registerComponent(ActionMenuButton, 'action-menu-button', { extends: 'button' })
