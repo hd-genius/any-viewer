@@ -11,7 +11,7 @@ export class ActionMenu extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "open") {
+        if (name === 'open') {
             if (newValue) {
                 this.open()
             } else {
@@ -21,15 +21,15 @@ export class ActionMenu extends HTMLElement {
     }
 
     get isOpen() {
-        return this.getAttribute("open")
+        return this.getAttribute('open')
     }
 
     open() {
-        this.setAttribute("open", true)
+        this.setAttribute('open', true)
     }
 
     close() {
-        this.removeAttribute("open")
+        this.removeAttribute('open')
     }
 }
 

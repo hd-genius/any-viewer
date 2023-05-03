@@ -20,7 +20,7 @@ export class ActionButton extends HTMLButtonElement {
     }
 
     get owningMenu() {
-        return this.closest("action-menu")
+        return this.closest('action-menu')
     }
 
     onclick() {

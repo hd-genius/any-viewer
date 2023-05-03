@@ -17,10 +17,10 @@
     transition-duration: 0.5s;
 }
 
-action-menu:not([open="true"]) .icon {
+action-menu:not([open='true']) .icon {
     rotate: 0deg;
 }
 
-action-menu[open="true"] .icon {
+action-menu[open='true'] .icon {
     rotate: 135deg;
 }
