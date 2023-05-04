@@ -1,0 +1,5 @@
+.actionMenuItem {
+    background-color: var(--primary-color);
+    padding: 0.25em;
+    border-radius: 0.5em;
+}
