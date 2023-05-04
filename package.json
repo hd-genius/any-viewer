@@ -7,7 +7,7 @@
         "doc": "docs"
     },
     "scripts": {
-        "test": "jest",
+        "test": "node --test",
         "clean": "gulp clean",
         "build": "gulp",
         "format": "prettier . --write",
